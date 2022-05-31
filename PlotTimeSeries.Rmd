@@ -20,7 +20,7 @@ We have information related to crude oil prices and forecast with lower and uppe
 
 
 ```{r, echo=FALSE, warning=FALSE}
-bd<-read.csv("C:/Users/Leobardo/Downloads/oil.csv")
+bd<-read.csv("C:/Users/Leobardo/Documents/GitHub/TimeSeries/oil.csv")
 sum<-(summary(bd))
 sum
 

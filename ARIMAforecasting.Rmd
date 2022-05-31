@@ -39,18 +39,19 @@ library(forecast)
 library(fpp2)
 library(stats)
 library(quantmod)
+library(utf8)
 ```
 
 
 
 ```{r, echo=FALSE, warning=FALSE}
 #Importar datos
-Arimar<-read.xlsx("C:/Users/Leobardo/Downloads/Arimar.xlsx")
+Arimar<-read.xlsx("C:/Users/Leobardo/Documents/GitHub/TimeSeries/Arimar.xlsx")
 ```
 
-# Precios de referencia internacional del petróleo. 
+# Precios de referencia internacional del petrÃ³leo. 
 
-En la siguiente Gráfica 1 se muestra la evolución de los precios de referencia internacional del petróleo desde enero de 2013 a marzo de 2020. Podemos observar una tendencia decreciente desde inicios del periodo hasta enero de 2016, a partir del cual se muestra una tendencia creciente hasta octubre de 2018. Esta tendencia se revierte desde finales de 2018 y persiste hasta finales del periodo analizado, a punto de alcanzar el nivel mínimo del periodo, observado en enero de 2016. 
+En la siguiente Grafica 1 se muestra la evolución de los precios de referencia internacional del petróleo desde enero de 2013 a marzo de 2020. Podemos observar una tendencia decreciente desde inicios del periodo hasta enero de 2016, a partir del cual se muestra una tendencia creciente hasta octubre de 2018. Esta tendencia se revierte desde finales de 2018 y persiste hasta finales del periodo analizado, a punto de alcanzar el nivel mínimo del periodo, observado en enero de 2016. 
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -119,7 +120,7 @@ ndiffs(seriedif)
 
 
 
-Se presenta la prueba Dickey Fuller cpara la serie con una diferencia. El p-valor muestra que aún es no estacionaria al 5% de nivel de significancia estadística. sin embargo, parece ser no estacionaria el 10%. 
+Se presenta la prueba Dickey Fuller cpara la serie con una diferencia. El p-valor muestra que es no estacionaria al 5% de nivel de significancia estadística. sin embargo, parece ser no estacionaria el 10%. 
 
 ```{r, echo=FALSE, warning=FALSE}
 ndiffs(seriedif)
