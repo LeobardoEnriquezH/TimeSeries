@@ -43,8 +43,8 @@ bd$time <- ts(bd$Month, start=c(2017, 1), end=c(2023, 12), frequency=12)
 bd$time<-as.numeric(time(bd$time)) 
 ggplot(bd,aes(x=time, y=Price))+
   geom_line(aes(x=time, y=Price),color="blue")+
-  geom_point(aes(x=time, y=Price.1),color="green")+
-  geom_point(aes(x=time, y=Forecast),color="red")+
+  geom_line(aes(x=time, y=Price.1),color="green")+
+  geom_line(aes(x=time, y=Forecast),color="red")+
   geom_point(aes(x=time, y=Lower),color="yellow")+
   geom_point(aes(x=time, y=Upper),color="purple")
 

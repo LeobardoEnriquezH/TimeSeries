@@ -49,7 +49,7 @@ library(utf8)
 Arimar<-read.xlsx("C:/Users/Leobardo/Documents/GitHub/TimeSeries/Arimar.xlsx")
 ```
 
-# Precios de referencia internacional del petrÃ³leo. 
+# Precios de referencia internacional del petróleo. 
 
 En la siguiente Grafica 1 se muestra la evolución de los precios de referencia internacional del petróleo desde enero de 2013 a marzo de 2020. Podemos observar una tendencia decreciente desde inicios del periodo hasta enero de 2016, a partir del cual se muestra una tendencia creciente hasta octubre de 2018. Esta tendencia se revierte desde finales de 2018 y persiste hasta finales del periodo analizado, a punto de alcanzar el nivel mínimo del periodo, observado en enero de 2016. 
 
@@ -69,9 +69,6 @@ En la siguiente Gráfica 2, se muestra la misma serie en logaritmos, para sueviz
 ```{r, echo=FALSE, warning=FALSE}
 serielog=log(Arimar.ts)
 plot(serielog, main="Evolución de los precios internacionales del barril de petróleo", ylab="Precio por barril en logaritmos", col="blue")
-
-
-
 ```
 
 
@@ -86,7 +83,7 @@ ndiffs(Arimar.ts, alpha = 0.05, test = c("kpss", "adf", "pp"), type = c("level",
 
 ```
 
-con la prueba de Dickey Fuller (DF) podemos observar que la serie no es estacionaria, ya que se tiene el siguiente p-valor mayor a 0.05, considerando un nivel de significancia estadística. 
+con la prueba de Dickey Fuller (DF) podemos observar que la serie no es estacionaria, ya que se tiene el siguiente p-valor mayor a 0.05, considerando un nivel de significancia estadística del 5%. 
 
 ```{r, echo=FALSE, warning=FALSE}
 #Paso 2.Prueba de DickeyFuller
@@ -105,7 +102,7 @@ plot(seriedif)
 ```
 
 
-A continuación se presenta la gráfica ACF. 
+A continuación se presenta la gráfica ACF de esta serie diferenciada una vez. 
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -120,7 +117,7 @@ ndiffs(seriedif)
 
 
 
-Se presenta la prueba Dickey Fuller cpara la serie con una diferencia. El p-valor muestra que es no estacionaria al 5% de nivel de significancia estadística. sin embargo, parece ser no estacionaria el 10%. 
+Se presenta la prueba Dickey Fuller para la serie con una diferencia. El p-valor muestra que es no estacionaria al 5% de nivel de significancia estadística. sin embargo, parece ser estacionaria el 10% de significancia. 
 
 ```{r, echo=FALSE, warning=FALSE}
 ndiffs(seriedif)
@@ -138,7 +135,7 @@ plot(seriedif2)
 ```
 
 
-A continuación se presenta la prueba de Dickey Fuller con dos diferencias.  Presenta un p-valor menor a 0.05, es decir, no se rechaza la hipótesis nula de no estacionariedad. 
+A continuación se presenta la prueba de Dickey Fuller con dos diferencias.  Presenta un p-valor menor a 0.05, es decir, se rechaza la hipótesis nula de no estacionariedad. 
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -168,8 +165,6 @@ Ahora tenemos:
 par(mfrow=c(2,1), mar=c(4,4,4,1)+.1)
 acf(seriedif2)
 pacf(seriedif2)
-
-
 ```
 
 
